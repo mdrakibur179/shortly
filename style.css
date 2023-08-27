@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: 'Poppins', sans-serif;
+}
+
+html,
+body {
+    height: 120%;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  text-decoration: none;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:root {
+    --clr-primary-light: hsl(180, 66%, 49%);
+    --clr-primary-dark: hsl(257, 27%, 26%);
+
+    --clr-secondary: hsl(0, 87%, 67%);
+
+    --clr-neutral-400: hsl(0, 0%, 75%);
+    --clr-neutral-500: hsl(257, 7%, 63%);
+    --clr-neutral-600: hsl(255, 11%, 22%);
+    --clr-neutral-700: hsl(260, 8%, 14%);
+
+    --fs-500: 18px;
+
+    --fw-500: 500;
+    --fw-700: 700;
+}
+
+.primary-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 9999;
+    padding: 1rem .5rem;
+    align-items: center;
+    background-color: white;
+}
+
+.logo {
+    min-width: 8rem;
+}
+
+.container {
+    max-width: 1440px;
+    margin-inline: auto;
+}
+
+.flex {
+    display: flex;
+}
+
+.primary-navigation {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-menu,
+.right-menu {
+    gap: 2rem;
+    align-items: center;
+}
+
+.left-menu {
+    margin-left: 2.5rem;
+}
+
+.primary-navigation li a {
+    color: gray;
+    font-weight: var(--fw-500);
+}
+
+.primary-navigation li a:hover {
+    color: black;
+}
+
+.primay-btn {
+    min-width: max-content;
+    background-color: hsl(180, 66%, 49%);
+    border: none;
+    padding: .5rem 1rem;
+    border-radius: 5rem;
+    color: white;
+    cursor: pointer;
+}
+
+.icon-close {
+    transform: scale(1.2);
+}
+
+.sr-only:not(:focus):not(:active) {
+    clip: rect(0 0 0 0); 
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap; 
+    width: 1px;
+}
+
+
+
+.nav-menu-toggler {
+    position: absolute;
+    right: 1rem;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    padding: .5em;
+    display: none;
+}
+
+.icon-hidden {
+    display: none;
+}
+
+.bar {
+    display: none;
+}
+
+
+
+@media (max-width: 45em) {
+    .primary-navigation {
+        flex-direction: column;
+        background-color: hsl(258, 27%, 29%);
+        position: fixed;
+        top: 100%;
+        left: 10%;
+        padding: 3rem 0;
+        width: 80%;
+        border-radius: 1rem;
+    }
+
+    .logo {
+        margin-left: 1rem;
+    }
+
+    .nav-menu-toggler {
+        display: block;
+    }
+
+    .primary-navigation[aria-expanded= "false"] {
+        display: none;
+    }
+    .primary-navigation[aria-expanded= "true"] {
+        display: block;
+    }
+
+    .scroll-off {
+        overflow: hidden;
+    }
+
+    .primary-navigation li a {
+        color: white;
+    }
+    .primary-navigation li a:hover {
+        color: slateblue;
+    }
+
+    .left-menu {
+        margin: 0 0 2rem 0;
+    }
+
+    .left-menu,
+    .right-menu {
+        flex-direction: column;
+    }
+
+    .right-menu {
+        margin-top: 2rem;
+    }
+
+    .bar {
+        display: block;
+        width: 80%;
+        opacity: .7;
+        height: 1px;
+        border: 0;
+        background-color: gray;
+        margin: auto;
+    }
+
+    .primay-btn {
+        width: 80%;
+        padding: 1rem 0;
+    }
+}
+
+
+
+
+
+.hero-section {
+    background-color: white;
+    margin-top: 4.65rem;
+    overflow: hidden;
+    padding: 0 .5rem;
+}
+
+.main-hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+}
+
+.illustration-working {
+    margin-left: 5%;
+    min-width: 160%;
+}
+
+.hero-desc {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-desc h1 {
+    font-size: clamp(2.2rem, 4vw, 5rem);
+    line-height: 1.1;
+    font-weight: var(--fw-700);
+    margin-bottom: 1rem;
+}
+
+.hero-desc p {
+    color: gray;
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+    line-height: 1.1;
+    margin-bottom: 2rem;
+}
+
+
+.primay-btn-hero {
+    max-width: max-content;
+    background-color: hsl(180, 66%, 49%);
+    border: none;
+    padding: .8rem 2rem;
+    border-radius: 5rem;
+    color: white;
+    cursor: pointer;
+}
+
+@media (min-width: 45em) {
+    .main-hero {
+        grid-template-columns: 1fr 1fr;
+    }
+    .hero-desc {
+        order: 1;
+        align-items: start;
+        text-align: start;
+        width: 80%;
+    }
+    .illustration-working {
+        order: 2;
+        margin-left: -15%;
+    }
+}
