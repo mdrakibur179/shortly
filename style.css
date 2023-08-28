@@ -146,6 +146,10 @@ svg {
     cursor: pointer;
 }
 
+.primay-btn:hover {
+    opacity: .85;
+}
+
 .icon-close {
     transform: scale(1.2);
 }
@@ -302,6 +306,10 @@ svg {
     border-radius: 5rem;
     color: white;
     cursor: pointer;
+}
+
+.primay-btn-hero:hover {
+    opacity: .85;
 }
 
 @media (min-width: 45em) {
